@@ -14,8 +14,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import org.apache.commons.io.FileUtils;
 
 
@@ -33,7 +36,7 @@ public class Steps {
         //firefoxDriver = new FirefoxDriver();
 
 
-       //firefoxDriver.manage().window().maximize();
+        //firefoxDriver.manage().window().maximize();
         chromeDriver.manage().window().maximize();
     }
 
@@ -85,7 +88,7 @@ public class Steps {
 
         chromeDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         JavascriptExecutor js = (JavascriptExecutor) chromeDriver;
-        js.executeScript("document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container_main > div > div > div > div.cc-app-containercontent-selectables-container > cc-motorization > cc-motorization-filters-section > cc-motorization-filters > form > fieldset.cc-motorization-filter.cc-col-mq1-12.cc-col-mq4-8 > div.cc-motorization-filter_options > div:nth-child(2) > wb-checkbox-control > label > input\").click();");
+        js.executeScript("document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container__main > div > div > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-filters-section > cc-motorization-filters > form > fieldset.cc-motorization-filter.cc-col-mq1-12.cc-col-mq4-8 > div.cc-motorization-filter__options > div:nth-child(2) > wb-checkbox-control > label > input\").click();");
 
     }
 
@@ -103,57 +106,57 @@ public class Steps {
     @Then("I save the value £ of the highest and lowest price results in a text file")
     public void i_save_the_value_£_of_the_highest_and_lowest_price_results_in_a_text_file() {
 
-      //  document.querySelector("body > div.root.responsivegrid > div > div > div > owcc-car-configurator").shadowRoot.querySelector("div > cc-app-container > div > div.cc-app-container__main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(2) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted")
-      //  document.querySelector("body > div.root.responsivegrid > div > div > div > owcc-car-configurator").shadowRoot.querySelector("div > cc-app-container > div > div.cc-app-container__main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(1) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted")
-      //  document.querySelector("body > div.root.responsivegrid > div > div > div > owcc-car-configurator").shadowRoot.querySelector("div > cc-app-container > div > div.cc-app-container__main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(3) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted")
-       // document.querySelector("body > div.root.responsivegrid > div > div > div > owcc-car-configurator").shadowRoot.querySelector("div > cc-app-container > div > div.cc-app-container__main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(4) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted")
-      //  document.querySelector("body > div.root.responsivegrid > div > div > div > owcc-car-configurator").shadowRoot.querySelector("div > cc-app-container > div > div.cc-app-container__main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(5) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted")
-      //  document.querySelector("body > div.root.responsivegrid > div > div > div > owcc-car-configurator").shadowRoot.querySelector("div > cc-app-container > div > div.cc-app-container__main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(6) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted")
 
-                //6
-      //  document.querySelector("body > div.root.responsivegrid > div > div > div > owcc-car-configurator").shadowRoot.querySelector("div > cc-app-container > div > div.cc-app-container__main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-comparison > div > cc-motorization-comparison-status > div")
-
-   //     JavascriptExecutor js = (JavascriptExecutor) chromeDriver;
-    //    js.executeScript("document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container__main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container__content-selectables-container > cc-motorization > cc-motorization-comparison > div > cc-motorization-comparison-status > div\")\n");
-      //    System.out.println("VALOR TOTAL " + js);
-
-        /*
-
-prices.get(0); // valor mais barato
-		prices.get(prices.size()-1); // valor mais alto
+//prices.get(0); // valor mais barato
+//		prices.get(prices.size()-1); // valor mais alto
 
 
-
-List<Long> prices = new ArrayList<>();
-		// pegar a div pai
-		// pra cada div filha pegar o price
-		Long price = Long.valueOf("valor do preço no site");
-		for () {
-			prices.add(price);
-		}
-		prices.stream().sorted().collect(Collectors.toList());
+        List<Long> prices = new ArrayList<>();
 
 
-
-		import java.util.*;
-import java.util.stream.*;
-public class SortListExample1
-{
-public static void main(String[] args)
-{
-//returns a list view
-List<String> slist = Arrays.asList("Tanu", "Kamal", "Suman", "Lucky", "Bunty", "Amit");
-List<String> sortedList = slist.stream().sorted().collect(Collectors.toList());
-sortedList.forEach(System.out::println);
-}
-}
+        JavascriptExecutor js = (JavascriptExecutor) chromeDriver;
+        String valor1 = (String) js.executeScript( "document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container_main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container_content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(1) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted\").innerText" );
+        valor1 = valor1.replace("£","");
+        Long price1 = Long.valueOf( valor1 );
+        prices.add( price1 );
 
 
-         */
+        String valor2 = (String) js.executeScript( "document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container_main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container_content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(2) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted\").innerText" );
+        valor2 = valor2.replace("£","");
+        Long price2 = Long.valueOf( valor2 );
+        prices.add( price2 );
 
+
+        String valor3 = (String) js.executeScript( "document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container_main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container_content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(3) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted\").innerText" );
+        valor3 = valor3.replace("£","");
+        Long price3 = Long.valueOf( valor3 );
+        prices.add( price3 );
+
+        String valor4 = (String) js.executeScript( "document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container_main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container_content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(4) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted\").innerText" );
+        valor4 = valor4.replace("£","");
+        Long price4 = Long.valueOf( valor4 );
+        prices.add( price4 );
+
+        String valor5 = (String) js.executeScript( "document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container_main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container_content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(5) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted\").innerText" );
+        valor5 = valor5.replace("£","");
+        Long price5 = Long.valueOf( valor5 );
+        prices.add( price5 );
+
+        String valor6 = (String) js.executeScript( "document.querySelector(\"body > div.root.responsivegrid > div > div > div > owcc-car-configurator\").shadowRoot.querySelector(\"div > cc-app-container > div > div.cc-app-container_main > div > div.cc-grid-container.ng-star-inserted > div > div.cc-app-container_content-selectables-container > cc-motorization > cc-motorization-comparison > div > div > div:nth-child(6) > div > cc-motorization-header > div > div > div.wb-type-copy.ng-star-inserted\").innerText" );
+        valor6 = valor6.replace("£","");
+        Long price6 = Long.valueOf( valor6 );
+        prices.add( price6 );
+
+        prices.stream().sorted().collect( Collectors.toList() );
+
+        prices.get(0); // valor mais barato
+        prices.get(prices.size()-1); // valor mais alto
+
+        System.out.println("The lowest price: "+prices.get(0));
+        System.out.println("The highest price: "+prices.get(prices.size()-1));
+         
 
     }
-
 
 
 
