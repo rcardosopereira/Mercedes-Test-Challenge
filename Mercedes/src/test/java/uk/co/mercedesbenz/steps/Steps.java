@@ -107,9 +107,6 @@ public class Steps {
     public void i_save_the_value_£_of_the_highest_and_lowest_price_results_in_a_text_file() {
 
 
-//prices.get(0); // valor mais barato
-//		prices.get(prices.size()-1); // valor mais alto
-
 
         List<Long> prices = new ArrayList<>();
 
@@ -149,12 +146,12 @@ public class Steps {
 
         prices.stream().sorted().collect( Collectors.toList() );
 
-        prices.get(0); // valor mais barato
-        prices.get(prices.size()-1); // valor mais alto
+        prices.get(0);
+        prices.get(prices.size()-1); 
 
         System.out.println("The lowest price: "+prices.get(0));
         System.out.println("The highest price: "+prices.get(prices.size()-1));
-         
+
 
     }
 
